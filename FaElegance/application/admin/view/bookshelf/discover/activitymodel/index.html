@@ -1,0 +1,112 @@
+<div class="panel panel-default panel-intro">
+    {:build_heading()}
+
+    <div class="panel-body">
+
+     
+        
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+                 
+                    <form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="bookshelf/discover/activitymodel/edit">
+
+  <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('进入活动图片')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="input-group">
+                                    <input id="c-loginImage" class="form-control" size="50" name="row[loginImage]" type="text" value="{$row.loginImage|htmlentities}">
+                                    <div class="input-group-addon no-border no-padding">
+                                        <span><button type="button" id="faupload-loginImage" class="btn btn-danger faupload" data-input-id="c-loginImage" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-loginImage"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                                        <span><button type="button" id="fachoose-loginImage" class="btn btn-primary fachoose" data-input-id="c-loginImage" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                                    </div>
+                                    <span class="msg-box n-right" for="c-loginImage"></span>
+                                </div>
+                                <ul class="row list-inline faupload-preview" id="p-loginImage"></ul>
+                            </div>
+                        </div>
+					
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('Activitytitle')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <input id="c-activityTitle" class="form-control" name="row[activityTitle]" type="text" value="{$row.activityTitle|htmlentities}">
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('activityIcon')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="input-group">
+                                    <input id="c-activityIcon" class="form-control" size="50" name="row[activityIcon]" type="text" value="{$row.activityIcon|htmlentities}">
+                                    <div class="input-group-addon no-border no-padding">
+                                        <span><button type="button" id="faupload-activityIcon" class="btn btn-danger faupload" data-input-id="c-activityIcon" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-activityIcon"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                                        <span><button type="button" id="fachoose-activityIcon" class="btn btn-primary fachoose" data-input-id="c-activityIcon" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                                    </div>
+                                    <span class="msg-box n-right" for="c-activityIcon"></span>
+                                </div>
+                                <ul class="row list-inline faupload-preview" id="p-activityIcon"></ul>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('Activitytext')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <style>
+                                    .fixed-width-textarea {
+                                      width: 300px;
+                                    }
+                                  </style>
+                                  <!-- onkeydown="insertLineBreak(event)" -->
+                                  <textarea id="c-activityText" class="form-control fixed-width-textarea editor"  rows="5" name="row[activityText]">{$row.activityText|htmlentities}</textarea>
+                                <!-- <textarea  id="c-activityText" class="form-control" rows="5" name="row[activityText]">{$row.activityText|htmlentities}</textarea> -->
+                                <!-- <input id="c-activityText" class="form-control" name="row[activityText]" type="text" value="{$row.activityText|htmlentities}"> -->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('Activityimage')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="input-group">
+                                    <input id="c-activityImage" class="form-control" size="50" name="row[activityImage]" type="text" value="{$row.activityImage|htmlentities}">
+                                    <div class="input-group-addon no-border no-padding">
+                                        <span><button type="button" id="faupload-activityImage" class="btn btn-danger faupload" data-input-id="c-activityImage" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-activityImage"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                                        <span><button type="button" id="fachoose-activityImage" class="btn btn-primary fachoose" data-input-id="c-activityImage" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                                    </div>
+                                    <span class="msg-box n-right" for="c-activityImage"></span>
+                                </div>
+                                <ul class="row list-inline faupload-preview" id="p-activityImage"></ul>
+                            </div>
+                        </div>
+           
+                      
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('Activityparagraph')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                              <textarea id="c-activityParagraph" class="form-control editor" rows="5" name="row[activityParagraph]"  >{$row.activityParagraph|htmlentities}</textarea>
+                            </div>
+                          </div>
+                
+                        <div class="form-group">
+                            <label class="control-label col-xs-12 col-sm-2">{:__('Soundtitle')}:</label>
+                            <div class="col-xs-12 col-sm-8">
+                                <input id="c-soundTitle" class="form-control" name="row[soundTitle]" type="text" value="{$row.soundTitle|htmlentities}">
+                            </div>
+                        </div>
+              
+                        <div class="form-group layer-footer">
+                            <label class="control-label col-xs-12 col-sm-2"></label>
+                            <div class="col-xs-12 col-sm-8">
+                                <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    
+           
+                
+                </div>
+            </div>
+
+        </div> 
+    </div>
+</div>
+
+
+

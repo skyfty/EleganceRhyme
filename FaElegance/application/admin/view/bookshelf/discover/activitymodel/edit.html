@@ -1,0 +1,53 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Content')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-content" data-rule="required" class="form-control editor" rows="5" name="row[content]" cols="50">{$row.content|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Activityicon')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-activityIcon" class="form-control" name="row[activityIcon]" type="text" value="{$row.activityIcon|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Activitytext')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-activityText" class="form-control" name="row[activityText]" type="text" value="{$row.activityText|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Activityimage')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-activityImage" class="form-control" size="50" name="row[activityImage]" type="text" value="{$row.activityImage|htmlentities}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="faupload-activityImage" class="btn btn-danger faupload" data-input-id="c-activityImage" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-activityImage"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-activityImage" class="btn btn-primary fachoose" data-input-id="c-activityImage" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-activityImage"></span>
+            </div>
+            <ul class="row list-inline faupload-preview" id="p-activityImage"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Activityparagraph')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-activityParagraph" class="form-control" name="row[activityParagraph]" type="text" value="{$row.activityParagraph|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Activitytitle')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-activityTitle" class="form-control" name="row[activityTitle]" type="text" value="{$row.activityTitle|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>

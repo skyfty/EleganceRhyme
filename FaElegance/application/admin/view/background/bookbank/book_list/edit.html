@@ -1,0 +1,126 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <!-- <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Content')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-content" class="form-control " rows="5" name="row[content]" cols="50">{$row.content|htmlentities}</textarea>
+        </div>
+    </div> -->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Book_name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-book_name" class="form-control" name="row[book_name]" type="text" value="{$row.book_name|htmlentities}">
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('作者')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-auther" class="form-control" name="row[auther]" type="text" value="{$row.auther|htmlentities}">
+        </div> 
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('朝代')}:</label>
+        <div class="col-xs-12 col-sm-8">
+        <select class="form-control" name="row[dynasty]">
+                <option value="先秦" {$row.dynasty=='先秦' ? 'selected' : '' }>先秦
+                </option>
+                <option value="汉朝" {$row.dynasty=='汉朝' ? 'selected' : '' } >汉朝
+                </option>
+                <option value="三国" {$row.dynasty=='三国' ? 'selected' : '' }>三国
+                </option>
+                <option value="隋朝" {$row.dynasty=='隋朝' ? 'selected' : '' }>隋朝
+                </option>
+                <option value="唐朝" {$row.dynasty=='唐朝' ? 'selected' : '' }>唐朝
+                </option>
+                <option value="宋朝" {$row.dynasty=='宋朝' ? 'selected' : '' }>宋朝
+                </option>
+                <option value="元朝" {$row.dynasty=='元朝' ? 'selected' : '' }>元朝
+                </option>
+                <option value="明朝" {$row.dynasty=='明朝' ? 'selected' : '' }>明朝
+                </option>
+                <option value="清朝" {$row.dynasty=='清朝' ? 'selected' : '' }>清朝
+                </option>
+                 <option value="近现代" {$row.dynasty=='近现代' ? 'selected' : '' }>近现代
+                </option>
+                <option value="当代" {$row.dynasty=='当代' ? 'selected' : '' }>当代
+                </option>
+                 <option value="未知" {$row.dynasty=='未知' ? 'selected' : '' }>未知
+                </option>
+            </select>
+
+        </div>
+    </div>
+
+    
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('正文')}:</label>
+        <div class="col-xs-12 col-sm-8">
+          <textarea id="c-ancientpoetry" class="form-control editor" rows="5" name="row[ancientpoetry]"  >{$row.ancientpoetry|htmlentities}</textarea>
+        </div>
+      </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('当前状态')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="form-control" name="row[now_status]">
+                <option value="未上架" {$row.now_status=='未上架' ? 'selected' : '' }>未上架
+                </option>
+                <option value="上架" {$row.now_status=='上架' ? 'selected' : '' }>上架
+                </option>
+                <option value="下架" {$row.now_status=='下架' ? 'selected' : '' }>下架
+                </option>
+                
+            </select>
+            <!-- <input id="c-now_status" class="form-control" name="row[now_status]" type="text" value="{$row.now_status|htmlentities}"> -->
+        </div> 
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Sound_file')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-sound_file" class="form-control" size="50" name="row[sound_file]" type="text" value="{$row.sound_file|htmlentities}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="faupload-sound_file" class="btn btn-danger faupload" data-input-id="c-sound_file" data-multiple="false" data-preview-id="p-sound_file"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-sound_file" class="btn btn-primary fachoose" data-input-id="c-sound_file" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-sound_file"></span>
+            </div>
+            <ul class="row list-inline faupload-preview" id="p-sound_file"></ul>
+        </div>
+    </div>
+    <!-- <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Book_file')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-book_file" class="form-control" size="50" name="row[book_file]" type="text" value="{$row.book_file|htmlentities}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="faupload-book_file" class="btn btn-danger faupload" data-input-id="c-book_file" data-multiple="false" data-preview-id="p-book_file"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-book_file" class="btn btn-primary fachoose" data-input-id="c-book_file" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-book_file"></span>
+            </div>
+            <ul class="row list-inline faupload-preview" id="p-book_file"></ul>
+        </div>
+    </div> -->
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Book_image')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-book_image" class="form-control" size="50" name="row[book_image]" type="text" value="{$row.book_image|htmlentities}">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="faupload-book_image" class="btn btn-danger faupload" data-input-id="c-book_image" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp,image/webp" data-multiple="false" data-preview-id="p-book_image"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                    <span><button type="button" id="fachoose-book_image" class="btn btn-primary fachoose" data-input-id="c-book_image" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> {:__('Choose')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-book_image"></span>
+            </div>
+            <ul class="row list-inline faupload-preview" id="p-book_image"></ul>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>
